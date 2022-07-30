@@ -17,6 +17,7 @@ class AnlibdirPlugin : FlutterPlugin, MethodCallHandler {
     private lateinit var context: Context
 
     override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
+        context = flutterPluginBinding.applicationContext
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "anlibdir")
         channel.setMethodCallHandler(this)
     }
